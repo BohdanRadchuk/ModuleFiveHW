@@ -22,33 +22,36 @@ public class MainCar {
         changeWindowStatus(cd);
         System.out.println("поменяли положение открыт-закрыт:");
         cd.show();
-        s
+        System.out.println("положение при вызове класса с задаными параметрами");
+        cd1.show();
+        changeWindowStatus(cd1);
+        System.out.println("поменяли значение окна в случае с задаными параметрами");
         cd1.show();
 
 
     }
 
-    public static void openDoor (CarDoor cd){
-       cd.setDoor("open");
+    public static void openDoor (CarDoor c){
+        c.setDoor("open");
     }
-    public static void closeDoor (CarDoor cd) {
-        cd.setDoor("closed");
+    public static void closeDoor (CarDoor c) {
+        c.setDoor("closed");
     }
-    public static void changeDoorStatus (CarDoor cd){
-        if (cd.getDoor().equals("closed"))
-            cd.setDoor("open");
-        else cd.setDoor("closed");
+    public static void changeDoorStatus (CarDoor c){
+        if (c.getDoor().equals("closed"))
+            c.setDoor("open");
+        else c.setDoor("closed");
 
     }
-    public static void openWindow (CarDoor cd){
-        cd.setWindow("open");
+    public static void openWindow (CarDoor c){
+        c.setWindow("open");
     }
-    public static void closeWindow (CarDoor cd){
-        cd.setWindow("closed");
+    public static void closeWindow (CarDoor c){
+        c.setWindow("closed");
     }
-    public static void changeWindowStatus (CarDoor cd) {
-        if (cd.getWindow().equals("closed"))
-            cd.setWindow("open");
-        else cd.setWindow("closed");
+    public static void changeWindowStatus (CarDoor c) {
+        if (c.getWindow().equals("closed"))
+            c.setWindow("open");
+        else c.setWindow("closed");
     }
 }
