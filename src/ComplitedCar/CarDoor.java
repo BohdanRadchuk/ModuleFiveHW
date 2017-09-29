@@ -24,7 +24,7 @@ public class CarDoor {
         this.window = window;
     }
     public void show (){
-        System.out.println("the door is " + door);
-        System.out.println("the window is " + window);
+        System.out.println("the door is \t" + door);
+        System.out.println("the window is \t " + window);
     }
 }
