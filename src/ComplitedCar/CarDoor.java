@@ -11,12 +11,6 @@ public class CarDoor {
         this.opendoor = opendoor;
         this.openwindow = openwindow;
     }
-    public boolean getDoor (){                       //getter door
-        return opendoor;
-    }
-    public boolean getWindow (){                     //getter window
-        return openwindow;
-    }
     public void setDoor (boolean opendoor){              //setter door
         this.opendoor = opendoor;
     }
@@ -30,7 +24,7 @@ public class CarDoor {
         setDoor(false);
     }
     public void changeDoorStatus (){
-        if (getDoor() == (false))
+        if (opendoor == (false))
             setDoor(true);
         else setDoor(false);
 
@@ -42,7 +36,7 @@ public class CarDoor {
         setWindow(false);
     }
     public void changeWindowStatus () {
-        if (getWindow()==(false))
+        if (openwindow==(false))
             setWindow(true);
         else setWindow(false);
     }
