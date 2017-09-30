@@ -1,13 +1,13 @@
 package ComplitedCar;
 
-public class CarDoor {
+public class carDoor {
     private boolean opendoor;
     private boolean openwindow;
-    public CarDoor () {                             //конструктор с пустыми полями по умолчанию дверь и окна закрыты
+    public carDoor () {                             //конструктор с пустыми полями по умолчанию дверь и окна закрыты
         this.opendoor = true;
         this.openwindow = true;
     }
-    public CarDoor (boolean opendoor, boolean openwindow){  //конструктор который принимает значения двери и окон
+    public carDoor (boolean opendoor, boolean openwindow){  //конструктор который принимает значения двери и окон
         this.opendoor = opendoor;
         this.openwindow = openwindow;
     }
