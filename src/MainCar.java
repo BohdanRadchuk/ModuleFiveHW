@@ -8,7 +8,9 @@ public class MainCar {
         CarDoor cd1 = new CarDoor(true, true);
         CarWheel cw = new CarWheel();
         CarWheel cw1 = new CarWheel(0.5f);
+
         Car prod = new Car(02102017);
+
         Car c = new Car ("VR6", 180, 8.9f, 5, 4 , 120);
 
         System.out.println(c.getWheel());
