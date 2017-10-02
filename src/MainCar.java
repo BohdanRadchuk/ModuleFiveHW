@@ -1,18 +1,20 @@
 import ComplitedCar.Car;
-import ComplitedCar.carDoor;
+import ComplitedCar.CarDoor;
 import ComplitedCar.CarWheel;
 
 public class MainCar {
     public static void main(String[] args) {
-        carDoor cd = new carDoor();
-        carDoor cd1 = new carDoor(true, true);
+        CarDoor cd = new CarDoor();
+        CarDoor cd1 = new CarDoor(true, true);
         CarWheel cw = new CarWheel();
         CarWheel cw1 = new CarWheel(0.5f);
-        //Car prod = new Car("26.09.2017");
+        Car prod = new Car(02102017);
         Car c = new Car ("VR6", 180, 8.9f, 5, 4 , 120);
 
+        System.out.println(c.getWheel());
+        c.show();
 
-        System.out.println("значения по умолчанию :");
+        System.out.println("значения окон и дверей по умолчанию:");
         cd.show();
 
         cd.setWindow(false);
@@ -44,11 +46,11 @@ public class MainCar {
 
 
         cw.show();                              //берём шину по умолчанию
-        cw.setWheelerasuer(1.5f);               //устанавливаем значение стёртости шины вручную на 0,5
+        cw.setWheelerasuer(0.5f);               //устанавливаем значение стёртости шины вручную на 0,5
         cw.show();
         cw.getNewTire();                        //берём новую шину
         cw.show();
-        cw.tireUsage(1.64f);                    //стираем шину на значение
+        cw.tireUsage(0.64f);                    //стираем шину на значение
         cw.show();
     }
 
