@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Car {
 
-    private int productionDate = 02102017;            //дата производства (неизменна после создания объекта)
+    private final int productionDate;            //дата производства (неизменна после создания объекта)
     private String enginetype;                     //тип двигателя
     private int maxspeed;                           //максимальная скорость машины (если она новая)
     private float onetohundred;                     //время разгона до 100км/ч
@@ -28,6 +28,7 @@ public class Car {
         this.maxpassangers = maxpassagers;
         this.passangersnow = passagersnow;
         this.speednow = speednow;
+        this.productionDate = 0;
     }
 
     public void setSpeednow(int speednow) {             //    change speed at the moment
