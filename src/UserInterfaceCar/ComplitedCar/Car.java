@@ -1,10 +1,11 @@
-package ComplitedCar;
+package UserInterfaceCar.ComplitedCar;
 
 import java.util.Arrays;
+import ComplitedCar.CarWheel;
 
 public class Car {
 
-    private final int productionDate;            //дата производства (неизменна после создания объекта)
+    private int productionDate = 02102017;            //дата производства (неизменна после создания объекта)
     private String enginetype;                     //тип двигателя
     private int maxspeed;                           //максимальная скорость машины (если она новая)
     private float onetohundred;                     //время разгона до 100км/ч
@@ -12,11 +13,13 @@ public class Car {
     private int passangersnow;                       //кол-во пассажиров внутри в данный момент
     private int speednow;                           //текущая скорость
     private float[] wheelarr = new float[4];            //массив колес
-
-    CarWheel cw = new CarWheel();
-
-
     private int[] doorarr = new int[]{1,2,3,4};                          //массив дверей*/
+    CarWheel cw = new CarWheel();
+    CarDoor cd = new CarDoor();
+
+
+
+
 
     public  Car (int productionDate){
         this.productionDate = productionDate;
@@ -28,7 +31,13 @@ public class Car {
         this.maxpassangers = maxpassagers;
         this.passangersnow = passagersnow;
         this.speednow = speednow;
-        this.productionDate = 0;
+    }
+    public void  wheelArrSet () {
+
+        for (int i = 0; i < wheelarr.length; i++) {
+
+            this.wheelarr[i] = cw.getWheelerasuer();
+        }
     }
 
     public void setSpeednow(int speednow) {             //    change speed at the moment
@@ -43,18 +52,21 @@ public class Car {
     public void getOutPassangers (){                    //    get out all passangers
         this.passangersnow = 0;
     }
-    public  int getDoorarr() {                      // get massive index door
-        int i = 3;                                  // massive index
+    public  int getDoorarr(int i) {                     // get massive index door
+
         int door = doorarr[i];
         return door;
     }
-    public  float getWheel() {                      // get massive index wheel
-        cw.tireUsage(0.5f);
-        for (int i = 0; i<wheelarr.length; i++) {
+    public  float getWheel(int tireindex, float errset) {                      // get massive index wheel
 
-            wheelarr[i] = cw.getWheelerasuer();
-        }
         int i = 3;                                  // massive index
+        float wheel = wheelarr[i];
+        return wheel;
+    }
+    public float setWheelerrasuer (int i, float errasuer){
+        cw.setWheelerasuer(errasuer);
+        this.wheelarr[i] = cw.getWheelerasuer();
+
         float wheel = wheelarr[i];
         return wheel;
     }
@@ -68,7 +80,6 @@ public class Car {
         float tempwheelarr[] = new float[wheelarr.length+extrasize];
         System.arraycopy(wheelarr, 0, tempwheelarr,0, wheelarr.length);
         for (int i = wheelarr.length; i<tempwheelarr.length; i++) {
-            cw.setWheelerasuer(1);
             tempwheelarr[i] = cw.getWheelerasuer();
         }
         this.wheelarr = tempwheelarr;
